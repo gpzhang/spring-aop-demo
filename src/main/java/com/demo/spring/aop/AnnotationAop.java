@@ -15,7 +15,7 @@ public class AnnotationAop {
     /**
      * 定义一个公共的切点
      */
-    @Pointcut("execution(* com.demo.spring.impl.DemoDaoImpl.delete())")
+    @Pointcut("execution(* com.demo.spring.impl.AccessOracleServiceImpl.delete())")
     public void performance() {
     }
 
