@@ -16,7 +16,7 @@
     <!-- 启动AspectJ自动代理 -->
     <aop:aspectj-autoproxy/>
 
-    <bean id="accessDdAop" class="com.demo.spring.aop.AccessDdAop"/>
+    <bean id="accessDdAspect" class="com.demo.spring.aop.AccessDbAspect"/>
 
     <!--实现具体的增强功能的切入点，方法前还是方法后-->
     <bean id="accessDbBeforeAdvice" class="com.demo.spring.aop.AccessDbBeforeAdvice"/>
@@ -32,7 +32,7 @@
         <aop:advisor advice-ref="accessDbAfterAdvice" pointcut-ref="allMethod"/>
 
         <!--< aop:aspect>定义切面，只需要定义一般的bean就行-->
-        <aop:aspect ref="accessDdAop">
+        <aop:aspect ref="accessDdAspect">
             <aop:pointcut id="inner-allMethod"
                           expression="execution(* com.demo.spring.impl.AccessMysqlServiceImpl.select())"/>
             <aop:before method="accessBefore" pointcut-ref="inner-allMethod"/>

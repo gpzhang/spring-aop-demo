@@ -2,7 +2,7 @@
     * aop:config中配置aop:pointcut和aop:aspect（切入点和切面）
     * aop:config中配置aop:pointcut和aop:advisor（切入点和通知器）
     
-* <aop:advisor>和<aop:aspect>其实都是将advice和pointcut进行了封装， 原理基本上是一样的，只是使用的方式不同而已。
+* <aop:advisor>和<aop:aspect>其实都是将advice和pointcut进行了封装，原理基本上是一样的，只是使用的方式不同而已。
     
 ```text
  * 程序运行时会调用很多方法，

@@ -23,6 +23,7 @@ public class AccessOracleServiceImpl implements DataBaseDao {
 
     @Override
     public void delete() {
+//        int i=10/0;
         System.out.println("oracle.table 删除!");
     }
 

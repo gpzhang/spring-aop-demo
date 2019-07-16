@@ -14,13 +14,13 @@
     <context:component-scan base-package="com.demo.spring"/>
 
 
-    <bean id="accessDdAop" class="com.demo.spring.aop.AccessDdAop"/>
+    <bean id="accessDdAspect" class="com.demo.spring.aop.AccessDbAspect"/>
 
     <!--aop:config中配置aop:pointcut和aop:aspect（切入点和切面）-->
     <!--proxy-target-class="false"使用jdk的动态代理 默认配置,proxy-target-class="true"使用cglib的动态代理-->
     <aop:config proxy-target-class="true">
         <!--< aop:aspect>定义切面，只需要定义一般的bean就行-->
-        <aop:aspect ref="accessDdAop">
+        <aop:aspect ref="accessDdAspect">
             <aop:pointcut id="inner-allMethod"
                           expression="execution(* com.demo.spring.impl.AccessMysqlServiceImpl.select())"/>
             <aop:before method="accessBefore" pointcut-ref="inner-allMethod"/>
